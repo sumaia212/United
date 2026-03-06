@@ -20,29 +20,20 @@ max-width:500px;
 margin:auto;
 }
 
-/* TOP BANNER */
-
-.top-banner{
-background:white;
-padding:10px;
-}
-
-/* NATIVE AD */
-
-.native-ad{
-background:white;
-margin:10px;
-padding:10px;
-border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-}
-
 .top-heading{
 font-size:18px;
 font-weight:bold;
 padding:15px;
 background:#1e2a44;
 color:white;
+}
+
+/* বাংলা নির্দেশনা */
+.ad-info{
+background:#ffe9a8;
+padding:10px;
+font-size:14px;
+font-weight:bold;
 }
 
 .reels{
@@ -67,8 +58,6 @@ box-shadow:0 5px 20px rgba(0,0,0,0.1);
 width:90%;
 }
 
-/* emoji animation */
-
 .click-hint{
 font-size:22px;
 font-weight:bold;
@@ -82,29 +71,20 @@ animation:bounce 1s infinite;
 50%{transform:translateY(10px);}
 }
 
-/* button */
-
 .play-btn{
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 background:#ff3b3b;
 color:white;
-
 width:220px;
 height:55px;
-
 margin:auto;
-
 font-size:18px;
 border-radius:50px;
 font-weight:bold;
 cursor:pointer;
-
 animation:pulse 1.5s infinite;
-
 }
 
 @keyframes pulse{
@@ -141,27 +121,15 @@ border-radius:5px;
 
 <body>
 
-<!-- TOP BANNER 728x90 -->
-
-<div class="top-banner">
-
-<script> atOptions = { 'key' : '7675ee033ba7dfa4ae8ab0361f45c991', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} }; </script> <script src="https://www.highperformanceformat.com/7675ee033ba7dfa4ae8ab0361f45c991/invoke.js"></script>
-
-</div>
-
-<!-- NATIVE AD -->
-
-<div class="native-ad">
-
-<script async="async" data-cfasync="false" src="https://pl27166999.effectivegatecpm.com/52d1274eae7ce958ca9dbd5dca26d88c/invoke.js"></script>
-<div id="container-52d1274eae7ce958ca9dbd5dca26d88c"></div>
-
-</div>
-
 <div class="container">
 
 <div class="top-heading">
 Fast Clicks And second click ad Show Then Video Open
+</div>
+
+<!-- বাংলা লেখা -->
+<div class="ad-info">
+প্রথম ২ বার ক্লিক করলে বিজ্ঞাপন দেখানো হবে (৩ সেকেন্ড)। তারপর ভিডিও চালু হবে।
 </div>
 
 <div class="reels">
@@ -273,8 +241,6 @@ bar.style.width = width + "%";
 
 }
 
-/* countdown */
-
 let time = 5;
 
 let timer = setInterval(function(){
@@ -292,8 +258,6 @@ clearInterval(timer);
 }
 
 },1000);
-
-/* live views */
 
 let views = 1284932;
 

@@ -1,279 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Viral Videos</title>
+<!-- POST PREVIEW IMAGE (First image of post will be used as FB preview) -->
+<!-- Video Thumbnail + Click Redirect -->
+<div style="max-width:720px;margin:auto;">
 
-<style>
+  <!-- CONFIG -->
+  <script>
+    var adLink = "https://www.effectivegatecpm.com/r17484zhh?key=8a56a9cd2e33690a2898d851e788b0a1";  // <-- এখানে Adsterra Direct Link বসাও
+    var videoLink = "https://cdn.videy.co/axPTg6fh1.mp4";  // <-- ভিডিও লিংক
+  </script>
 
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#3898C8;
-text-align:center;
-}
+  <!-- STYLE -->
+  <style>
+    .video-box{
+      position:relative;
+      width:100%;
+      cursor:pointer;
+      border-radius:12px;
+      overflow:hidden;
+      display:block;
+    }
+    .video-box img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:12px;
+    }
+    .play-btn{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:80px;
+      height:80px;
+      background:rgba(0,0,0,0.6);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 18px rgba(0,0,0,0.35);
+    }
+    .play-btn:after{
+      content:"";
+      margin-left:4px;
+      border-style:solid;
+      border-width:15px 0 15px 25px;
+      border-color:transparent transparent transparent white;
+    }
+    .overlay-gradient{
+      position:absolute;
+      left:0; right:0; bottom:0; top:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
+    }
+  </style>
 
-.container{
-max-width:500px;
-margin:auto;
-}
+  <!-- THUMBNAIL + PLAY BUTTON -->
+  <div class="video-box" onclick="openRedirect();">
+    <!-- নিচে src এর মধ্যে সরাসরি লিংক বসিয়ে দেওয়া হয়েছে -->
+    <img id="thumb" src="https://i.ibb.co.com/g8bRVYN/yk-Bs0ru-W.jpg" alt="Play Video">
+    <div class="overlay-gradient"></div>
+    <div class="play-btn"></div>
+  </div>
 
-.top-heading{
-font-size:18px;
-font-weight:bold;
-padding:15px;
-background:#1e2a44;
-color:white;
-}
-
-/* বাংলা নির্দেশনা */
-.ad-info{
-background:#ffe9a8;
-padding:10px;
-font-size:14px;
-font-weight:bold;
-}
-
-.reels{
-height:80vh;
-overflow-y:auto;
-scroll-snap-type:y mandatory;
-}
-
-.reel{
-height:80vh;
-scroll-snap-align:start;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.video-box{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-width:90%;
-}
-
-.click-hint{
-font-size:22px;
-font-weight:bold;
-color:#ff3b3b;
-margin-bottom:10px;
-animation:bounce 1s infinite;
-}
-
-@keyframes bounce{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(10px);}
-}
-
-.play-btn{
-display:flex;
-align-items:center;
-justify-content:center;
-background:#ff3b3b;
-color:white;
-width:220px;
-height:55px;
-margin:auto;
-font-size:18px;
-border-radius:50px;
-font-weight:bold;
-cursor:pointer;
-animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
-}
-
-.views{
-color:#ff3b3b;
-font-weight:bold;
-margin:10px 0;
-}
-
-.countdown{
-font-size:14px;
-margin-top:5px;
-}
-
-.loader{
-display:none;
-margin-top:10px;
-}
-
-.loader-bar{
-width:0%;
-height:8px;
-background:#ff3b3b;
-border-radius:5px;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="top-heading">
-Fast Clicks And second click ad Show Then Video Open
-</div>
-
-<!-- বাংলা লেখা -->
-<div class="ad-info">
-প্রথম ২ বার ক্লিক করলে বিজ্ঞাপন দেখানো হবে (৩ সেকেন্ড)। তারপর ভিডিও চালু হবে।
-</div>
-
-<div class="reels">
-
-<div class="reel">
-
-<div class="video-box">
-
-<h2>🔥 Viral Video</h2>
-
-<p class="views">
-👁 <span id="views">1284932</span> people watched
-</p>
-
-<div class="click-hint">
-👇 CLICK HERE 👇
-</div>
-
-<div id="playBtn" class="play-btn" onclick="handleClick()">
-▶ Play Full Video
-</div>
-
-<div class="countdown">
-Video unlock in <span id="timer">5</span> seconds
-</div>
-
-<div class="loader">
-
-<p>Loading video...</p>
-
-<div style="background:#ddd;border-radius:5px;">
-<div class="loader-bar" id="progressBar"></div>
-</div>
+  <!-- SCRIPT -->
+  <script>
+    function openRedirect(){
+      window.open(adLink, "_blank");
+      setTimeout(function(){
+        window.location.href = videoLink;
+      }, 900);
+    }
+  </script>
 
 </div>
 
+<!-- EXTRA IMAGE for Facebook Preview -->
+<div style="display:none;">
+  <!-- এখানে প্রিভিউ ইমেজের লিংক দিন যদি আলাদা প্রিভিউ চান -->
+  <img src="https://i.ibb.co.com/g8bRVYN/yk-Bs0ru-W.jpg" alt="FB Preview">
 </div>
-
-</div>
-
-</div>
-
-</div>
-
-<script>
-
-let clickCount = 0;
-
-const adLink = "https://www.effectivegatecpm.com/r67eze3m?key=ff1fa683d527334a41af7c9937aa0324";
-const videoLink = "https://cdn.videy.co/axPTg6fh1.mp4";
-
-function handleClick(){
-
-clickCount++;
-
-let btn = document.getElementById("playBtn");
-
-if(clickCount === 1){
-
-btn.innerText = "1";
-window.location.href = adLink;
-
-}
-
-else if(clickCount === 2){
-
-btn.innerText = "2";
-window.location.href = adLink;
-
-}
-
-else if(clickCount === 3){
-
-btn.innerText = "Open Video";
-
-}
-
-else{
-
-startLoader();
-
-}
-
-}
-
-function startLoader(){
-
-document.querySelector(".loader").style.display = "block";
-
-let bar = document.getElementById("progressBar");
-
-let width = 0;
-
-let interval = setInterval(function(){
-
-if(width >= 100){
-
-clearInterval(interval);
-window.location.href = videoLink;
-
-}else{
-
-width++;
-bar.style.width = width + "%";
-
-}
-
-},35);
-
-}
-
-let time = 5;
-
-let timer = setInterval(function(){
-
-time--;
-
-let el = document.getElementById("timer");
-
-if(el){
-el.innerText = time;
-}
-
-if(time <= 0){
-clearInterval(timer);
-}
-
-},1000);
-
-let views = 1284932;
-
-setInterval(function(){
-
-views += Math.floor(Math.random()*6);
-
-let el = document.getElementById("views");
-
-if(el){
-el.innerText = views;
-}
-
-},2000);
-
-</script>
-
-</body>
-</html>

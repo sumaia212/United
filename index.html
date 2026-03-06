@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Viral Videos</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#3898C8;
+text-align:center;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+}
+
+/* TOP BANNER */
+
+.top-banner{
+background:white;
+padding:10px;
+}
+
+/* NATIVE AD */
+
+.native-ad{
+background:white;
+margin:10px;
+padding:10px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.top-heading{
+font-size:18px;
+font-weight:bold;
+padding:15px;
+background:#1e2a44;
+color:white;
+}
+
+.reels{
+height:80vh;
+overflow-y:auto;
+scroll-snap-type:y mandatory;
+}
+
+.reel{
+height:80vh;
+scroll-snap-align:start;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.video-box{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+width:90%;
+}
+
+/* emoji animation */
+
+.click-hint{
+font-size:22px;
+font-weight:bold;
+color:#ff3b3b;
+margin-bottom:10px;
+animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(10px);}
+}
+
+/* button */
+
+.play-btn{
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#ff3b3b;
+color:white;
+
+width:220px;
+height:55px;
+
+margin:auto;
+
+font-size:18px;
+border-radius:50px;
+font-weight:bold;
+cursor:pointer;
+
+animation:pulse 1.5s infinite;
+
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+.views{
+color:#ff3b3b;
+font-weight:bold;
+margin:10px 0;
+}
+
+.countdown{
+font-size:14px;
+margin-top:5px;
+}
+
+.loader{
+display:none;
+margin-top:10px;
+}
+
+.loader-bar{
+width:0%;
+height:8px;
+background:#ff3b3b;
+border-radius:5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BANNER 728x90 -->
+
+<div class="top-banner">
+
+<script> atOptions = { 'key' : 'a93a462c57bd0b8d111380b394efbf9b', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} }; </script> <script src="https://www.highperformanceformat.com/a93a462c57bd0b8d111380b394efbf9b/invoke.js"></script>
+
+</div>
+
+<!-- NATIVE AD -->
+
+<div class="native-ad">
+
+<script async="async" data-cfasync="false" src="https://pl27166999.effectivegatecpm.com/52d1274eae7ce958ca9dbd5dca26d88c/invoke.js"></script> <div id="container-52d1274eae7ce958ca9dbd5dca26d88c"></div>
+
+</div>
+
+<div class="container">
+
+<div class="top-heading">
+Fast Clicks And second click ad Show Then Video Open
+</div>
+
+<div class="reels">
+
+<div class="reel">
+
+<div class="video-box">
+
+<h2>🔥 Viral Video</h2>
+
+<p class="views">
+👁 <span id="views">1284932</span> people watched
+</p>
+
+<div class="click-hint">
+👇 CLICK HERE 👇
+</div>
+
+<div id="playBtn" class="play-btn" onclick="handleClick()">
+▶ Play Full Video
+</div>
+
+<div class="countdown">
+Video unlock in <span id="timer">5</span> seconds
+</div>
+
+<div class="loader">
+
+<p>Loading video...</p>
+
+<div style="background:#ddd;border-radius:5px;">
+<div class="loader-bar" id="progressBar"></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let clickCount = 0;
+
+const adLink = "https://www.effectivegatecpm.com/r67eze3m?key=ff1fa683d527334a41af7c9937aa0324";
+const videoLink = "https://cdn.videy.co/axPTg6fh1.mp4";
+
+function handleClick(){
+
+clickCount++;
+
+let btn = document.getElementById("playBtn");
+
+if(clickCount === 1){
+
+btn.innerText = "1";
+window.location.href = adLink;
+
+}
+
+else if(clickCount === 2){
+
+btn.innerText = "2";
+window.location.href = adLink;
+
+}
+
+else if(clickCount === 3){
+
+btn.innerText = "Open Video";
+
+}
+
+else{
+
+startLoader();
+
+}
+
+}
+
+function startLoader(){
+
+document.querySelector(".loader").style.display = "block";
+
+let bar = document.getElementById("progressBar");
+
+let width = 0;
+
+let interval = setInterval(function(){
+
+if(width >= 100){
+
+clearInterval(interval);
+window.location.href = videoLink;
+
+}else{
+
+width++;
+bar.style.width = width + "%";
+
+}
+
+},35);
+
+}
+
+/* countdown */
+
+let time = 5;
+
+let timer = setInterval(function(){
+
+time--;
+
+let el = document.getElementById("timer");
+
+if(el){
+el.innerText = time;
+}
+
+if(time <= 0){
+clearInterval(timer);
+}
+
+},1000);
+
+/* live views */
+
+let views = 1284932;
+
+setInterval(function(){
+
+views += Math.floor(Math.random()*6);
+
+let el = document.getElementById("views");
+
+if(el){
+el.innerText = views;
+}
+
+},2000);
+
+</script>
+
+</body>
+</html>
